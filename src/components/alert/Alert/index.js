@@ -56,7 +56,7 @@ const Alert = (props) => {
 Alert.propTypes = {
     alert: PropTypes.shape({
         message: PropTypes.node.isRequired,
-        type: PropTypes.string.isRequired,
+        type: PropTypes.oneOf(['danger', 'success', 'warning']),
     }),
 };
 
