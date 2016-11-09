@@ -33,13 +33,13 @@ export function removeAlert(alert) {
     });
 }
 
-export function addTimedAlert(alert, displayTime) {
+export function addTimedAlert(alert, displayTime = 5000) {
     addAlert(alert);
 
     setTimeout(
         () => {
             removeAlert(alert);
         },
-        displayTime || 5000
+        displayTime
     );
 }
