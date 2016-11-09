@@ -2,7 +2,7 @@
 Collection of common UI components to be shared throughout SellerLabs.
 
 ### Alert
-The alert is a top level component used to show alerts throughout an application.
+A top level component used to show alerts throughout an application.
 
 #### Usage
 To use the alert component `import { AlertContainer } from ui-beakers;` and place in a top level component within your app (ideally something like `App.jsx`). Then pass the container either your custom alert or the standard alert that comes with `ui-beakers`.
@@ -26,7 +26,6 @@ import { Alert, AlertContainer } from ui-beakers;
 #### Actions
 There are three actions that can be used to modify the alert store: `addAlert`, `addTimedAlert`, and `removeAlert.` 
 
-___
 `addAlert(alert: Object)`:
 > adds alert object to the store (note: the object will not be removed until `removeAlert` is called).
 
@@ -51,9 +50,25 @@ Alert.propTypes = {
 };
 ```
 
+Alert objects must have the same shape as defined above when using the default alert component:
+
+```javascript
+addAlert({
+    message: 'Test alert!',
+    type: 'success',
+});
+
+addTimedAlert({
+    message: (
+        <div>Test alert</div>
+    ),
+    type: 'success',
+});
+```
+
 #### Custom Alert Components
 To use your own custom alert component simply pass your alert component in to the AlertContainer.
-Your component will then be passed first alert object in the store as a prop named alert.
+Your component will then be passed the first alert object in the store as a prop named alert.
 
 For example:
 ```javascript
@@ -63,7 +78,10 @@ import MyCustomAlert from 'path/to/MyCustomAlert';
 
 const App = () => {
     return (
-        <AlertContainer alertComponent={ MyCustomerAlert } />
+        <div> 
+            <AlertContainer alertComponent={ MyCustomerAlert } />
+            <span>Nav goes here</span>
+        </div>
     );
 };
 
@@ -79,5 +97,7 @@ addAlert({
 const MyCustomAlert = ({ alert }) => {
     console.log(alert.foo); // bar
     console.log(alert.hello); // World
+    
+    return null;
 };
 ```
