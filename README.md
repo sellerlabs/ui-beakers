@@ -37,7 +37,7 @@ ___
 ___
 
 `addTimedAlert(alert: Object, displayTime?: Number)`
-> calls `addAlert` with alert object then calls `removeAlert` after either the displayTime expires or after a default time of 5 seconds.
+> calls `addAlert` with alert object then calls `removeAlert` after either the displayTime (in ms) expires or after a default time of 5 seconds.
 
 #### Default Alert Component
 The default alert component has the following propTypes:
