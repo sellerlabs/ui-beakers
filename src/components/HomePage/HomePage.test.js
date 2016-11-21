@@ -18,3 +18,15 @@ it('renders an application logo', () => {
     expect(imgAttribs.src).toBe(fakeSrc);
     expect(imgAttribs.alt).toBe('application-logo');
 });
+
+it('renders children', () => {
+    const homePageWithChildren = render(
+        <HomePage>
+            <div id="test-child">
+                Test text
+            </div>
+        </HomePage>
+    );
+
+    expect(homePageWithChildren.find('#test-child').length).toBe(1);
+})

@@ -66,10 +66,14 @@ export default class HomePage extends Component {
      * @returns {ReactElement}
      */
     render = (): React$Element<any> => {
-        const { logoSrc, logoStyle = {} } = this.props;
+        const { children, logoSrc, logoStyle = {} } = this.props;
 
         return (
             <div>
+                <div style={ style.background }>
+                    <canvas id="welcomeCanvas" />
+                </div>
+
                 <div style={ style.contentContainer }>
                     {
                         logoSrc
@@ -87,10 +91,7 @@ export default class HomePage extends Component {
                         ) : null
                     }
 
-                    <div style={ style.background }>
-                        <canvas id="welcomeCanvas" />
-                    </div>
-
+                    { children }
                 </div>
             </div>
         );
@@ -100,6 +101,7 @@ export default class HomePage extends Component {
 HomePage.propTypes = {
     backgroundColor: PropTypes.string,
     backgroundEndColor: PropTypes.string,
+    children: PropTypes.node,
     lineColor: PropTypes.string,
     logoSrc: PropTypes.string,
     logoStyle: PropTypes.object,
