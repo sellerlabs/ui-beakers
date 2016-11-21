@@ -101,3 +101,47 @@ const MyCustomAlert = ({ alert }) => {
     return null;
 };
 ```
+
+### HomePage
+Landing page for Seller Labs applications (originally from Scope).
+
+#### Usage
+Example from Promote-UI:
+```es6
+// @flow
+import React from 'react';
+import { HomePage } from ui-beakers;
+import {
+    landingPageBackground,
+    primary1Color,
+    primary2Color,
+    primary3Color,
+} from 'constants/colors';
+import promoteLogo from 'images/promote-logo.png';
+
+const Home = () => (
+    <HomePage
+        backgroundColor={ landingPageBackground }
+        backgroundEndColor={ primary3Color }
+        lineColor={ primary2Color }
+        logoSrc={ promoteLogo }
+        particleColor={ primary1Color }
+        ringColor={ primary1Color } />
+);
+
+export default Home;
+```
+
+#### Props
+If `backgroundEndColor` is passed, the background color will be a gradient from `backgroundColor` (top) to `backgroundEndColor`. Otherwise, the entire background will be `backgroundColor`.
+
+```
+backgroundColor: PropTypes.string,
+backgroundEndColor: PropTypes.string,
+children: PropTypes.node,
+lineColor: PropTypes.string,
+logoSrc: PropTypes.string,
+logoStyle: PropTypes.object,
+particleColor: PropTypes.string,
+ringColor: PropTypes.string,
+```
