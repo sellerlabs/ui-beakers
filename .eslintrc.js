@@ -14,15 +14,30 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: [
+        'flowtype',
         'react',
         'sorting',
     ],
     rules: {
         'arrow-body-style': ['off'],
         'arrow-parens': ['error', 'always'],
+        'comma-dangle': [
+            'error',
+            {
+                arrays: 'only-multiline',
+                exports: 'only-multiline',
+                functions: 'never',
+                imports: 'only-multiline',
+                objects: 'only-multiline',
+            },
+        ],
         'import/extensions': ['off'],
         'import/no-unresolved': ['off'],
         'indent': ['error', 4, { SwitchCase: 1 }],
+        'jsx-a11y/no-static-element-interactions': ['off'],
+        'react/forbid-prop-types': ['error', {
+            'forbid': ['any', 'array'],
+        }],
         'react/jsx-boolean-value': ['error', 'always'],
         'react/jsx-closing-bracket-location': ['off'],
         'react/jsx-curly-spacing': [

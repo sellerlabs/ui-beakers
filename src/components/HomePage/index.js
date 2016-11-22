@@ -1,4 +1,4 @@
-/** @flow */
+// @flow
 
 import React, { Component, PropTypes } from 'react';
 
@@ -65,7 +65,7 @@ export default class HomePage extends Component {
      *
      * @returns {ReactElement}
      */
-    render = (): React$Element<any> => {
+    render = () => {
         const { children, logoSrc, logoStyle = {} } = this.props;
 
         return (
