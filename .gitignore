@@ -38,9 +38,3 @@ lib
 
 # CSV generated from language files by scripts/lang2csv
 lang.csv
-
-# bundled ES5 module
-index.js
-index.js.map
-
-!src/index.js
