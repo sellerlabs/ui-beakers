@@ -12,7 +12,6 @@ module.exports = {
         filename: 'index.js',
         library: libraryName,
         libraryTarget: 'umd',
-        umdNamedDefine: true,
     },
     module: {
         loaders: [
