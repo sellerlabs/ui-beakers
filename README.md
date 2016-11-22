@@ -1,6 +1,11 @@
 # ui-beakers
 Collection of common UI components to be shared throughout SellerLabs.
 
+## Building
+Include any authored modules in imports and exports in `src/index.js`. Run `npm run build` to bundle and transpile `src/index.js` to `index.js` in project root.
+
+TODO: Prepublish scripts (the conventional solution for transpiling npm packages written in ES6) are currently unavailable for npm-installed git repositories. Transpiling/bundling with postinstall scripts requires installing `devDependencies` prior to running the build script. A better solution than committing the build file should be investigated.
+
 ### Alert
 A top level component used to show alerts throughout an application.
 
