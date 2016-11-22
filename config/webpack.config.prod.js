@@ -1,16 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
 var libraryName = 'ui-beakers';
-var outputFile = libraryName + '.js';
 var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-    entry: path.resolve('index.js'),
+    entry: path.resolve('./src/index.js'),
     externals: [nodeExternals()],
     devtool: 'source-map',
     output: {
-        path: path.resolve('./lib'),
-        filename: outputFile,
+        path: path.resolve(),
+        filename: 'index.js',
         library: libraryName,
         libraryTarget: 'umd',
         umdNamedDefine: true,

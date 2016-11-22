@@ -32,6 +32,7 @@ module.exports = {
             },
         ],
         'import/extensions': ['off'],
+        'import/no-extraneous-dependencies': ['off'],
         'import/no-unresolved': ['off'],
         'indent': ['error', 4, { SwitchCase: 1 }],
         'jsx-a11y/no-static-element-interactions': ['off'],
