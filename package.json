@@ -24,7 +24,9 @@
     "bowser": "^1.5.0",
     "color": "^0.11.4",
     "immutable": "^3.8.1",
+    "material-ui": "^0.16.6",
     "react": "^15.4.0",
+    "react-cellblock": "^2.0.0",
     "react-dom": "^15.4.0",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0"
