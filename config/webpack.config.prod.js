@@ -25,6 +25,10 @@ module.exports = {
                 loader: "eslint-loader",
                 exclude: /node_modules/,
             },
+            {
+                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+                loader: "url-loader?limit=100000"
+            },
         ],
     },
     plugins: [
