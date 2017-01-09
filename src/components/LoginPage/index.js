@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react';
 import { Card, RaisedButton } from 'material-ui';
 import { Grid, Row, Column } from 'react-cellblock';
 
-import Bullet from './Bullet';
 import menuLogoFbg from './images/menu-logo-fbg.svg';
+import menuLogoPromote from './images/menu-logo-promote.svg';
 import menuLogoQuantify from './images/menu-logo-quantify.svg';
 import menuLogoScope from './images/menu-logo-scope.svg';
 
 const LoginPage = (props) => {
-    const { promoteLogo, slappUrl } = props;
+    const { children, color, description, logo, slappUrl } = props;
     const styles = {
         button: {
             backgroundColor: '#50c533',
@@ -18,7 +18,7 @@ const LoginPage = (props) => {
             textAlign: 'center',
         },
         description: {
-            color: '#1390d8',
+            color,
             fontSize: 20,
         },
         footerRow: {
@@ -48,7 +48,7 @@ const LoginPage = (props) => {
                         <Card>
                             <img
                                 alt="Promote Logo"
-                                src={ promoteLogo }
+                                src={ logo }
                                 style={ styles.img } />
 
                             <Row>
@@ -60,15 +60,12 @@ const LoginPage = (props) => {
                             <Row>
                                 <Column offset="1/12" width="5/6">
                                     <p style={ styles.para }>
-                                        Gain quick insight and depth into the Amazon product
-                                        catalog, search terms, product sales velocity and
-                                        more with the premier product research and monitoring
-                                        tool for Amazon Sellers
+                                        { description }
                                     </p>
                                 </Column>
                             </Row>
 
-                            <Bullet />
+                            { children }
 
                             <Row style={{ marginTop: 10 }}>
                                 <Column offset="1/3" width="1/3">
@@ -92,7 +89,7 @@ const LoginPage = (props) => {
                         </Card>
 
                         <Row>
-                            <Column offset="1/6" width="2/3">
+                            <Column offset="1/6" width="3/4">
                                 <div style={ styles.footerRow }>
                                     <p style={ styles.para }>
                                         More Great Seller Labs Products:
@@ -106,6 +103,9 @@ const LoginPage = (props) => {
                                     <a href="https://scope.sellerlabs.com/">
                                         <img alt="Scope Logo" src={ menuLogoScope } />
                                     </a>
+                                    <a href="https://promote.sellerlabs.com/">
+                                        <img alt="Promote Logo" src={ menuLogoPromote } />
+                                    </a>
                                 </div>
                             </Column>
                         </Row>
@@ -117,7 +117,10 @@ const LoginPage = (props) => {
 };
 
 LoginPage.propTypes = {
-    promoteLogo: PropTypes.Object,
+    children: PropTypes.object,
+    color: PropTypes.string,
+    description: PropTypes.string,
+    logo: PropTypes.string,
     slappUrl: PropTypes.string.isRequired,
 };
 
