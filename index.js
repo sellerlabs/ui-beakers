@@ -1197,7 +1197,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        null,
 	                        _react2.default.createElement(
 	                            _reactCellblock.Column,
-	                            { offset: '1/6', width: '3/4' },
+	                            { offset: '1/8', width: '3/4' },
 	                            _react2.default.createElement(
 	                                'div',
 	                                { style: styles.footerRow },

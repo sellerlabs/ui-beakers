@@ -99,7 +99,7 @@ const LoginPage = (props) => {
                         </Card>
 
                         <Row>
-                            <Column offset="1/6" width="3/4">
+                            <Column offset="1/8" width="3/4">
                                 <div style={ styles.footerRow }>
                                     <p style={ styles.para }>
                                         More Great Seller Labs Products:
