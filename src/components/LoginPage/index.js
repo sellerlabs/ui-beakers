@@ -34,9 +34,16 @@ const LoginPage = (props) => {
         para: {
             fontSize: 16,
         },
+        signIn: {
+            marginTop: 10
+        },
         signLink: {
             color: '#007cd2',
             textDecoration: 'none',
+        },
+        signUp: {
+            color: '#8d8d8d',
+            marginBottom: 30
         },
     };
 
@@ -67,7 +74,7 @@ const LoginPage = (props) => {
 
                             { children }
 
-                            <Row style={{ marginTop: 10 }}>
+                            <Row style={ styles.signIn }>
                                 <Column offset="1/3" width="1/3">
                                     <RaisedButton
                                         buttonStyle={ styles.button }
@@ -78,7 +85,7 @@ const LoginPage = (props) => {
 
                             <Row>
                                 <Column>
-                                    <p style={{ color: '#8d8d8d', marginBottom: 30 }}>
+                                    <p style={ styles.signUp }>
                                         Don&apos;t have a Seller Labs account?&nbsp;
                                         <a href={ `${slappUrl}&prefer_signup=true` } style={ styles.signLink }>
                                             Sign up here
