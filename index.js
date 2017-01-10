@@ -1093,6 +1093,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        footerRow: {
 	            alignItems: 'center',
 	            display: 'flex',
+	            flexFlow: 'row wrap',
 	            justifyContent: 'space-around',
 	            marginTop: 10
 	        },
@@ -1103,15 +1104,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	        para: {
 	            fontSize: 16
 	        },
+	        signIn: {
+	            display: 'flex',
+	            justifyContent: 'center',
+	            marginTop: 10
+	        },
 	        signLink: {
 	            color: '#007cd2',
 	            textDecoration: 'none'
+	        },
+	        signUp: {
+	            color: '#8d8d8d',
+	            marginBottom: 30
 	        }
 	    };
 	
 	    return _react2.default.createElement(
 	        _reactCellblock.Grid,
-	        null,
+	        { breakpoints: [12] },
 	        _react2.default.createElement(
 	            _reactCellblock.Row,
 	            null,
@@ -1120,7 +1130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                { style: styles.container },
 	                _react2.default.createElement(
 	                    _reactCellblock.Column,
-	                    { offset: '1/6', width: '2/3' },
+	                    null,
 	                    _react2.default.createElement(
 	                        _materialUi.Card,
 	                        null,
@@ -1153,10 +1163,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        children,
 	                        _react2.default.createElement(
 	                            _reactCellblock.Row,
-	                            { style: { marginTop: 10 } },
+	                            null,
 	                            _react2.default.createElement(
-	                                _reactCellblock.Column,
-	                                { offset: '1/3', width: '1/3' },
+	                                'div',
+	                                { style: styles.signIn },
 	                                _react2.default.createElement(_materialUi.RaisedButton, {
 	                                    buttonStyle: styles.button,
 	                                    href: slappUrl,
@@ -1171,7 +1181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                null,
 	                                _react2.default.createElement(
 	                                    'p',
-	                                    { style: { color: '#8d8d8d', marginBottom: 30 } },
+	                                    { style: styles.signUp },
 	                                    'Don\'t have a Seller Labs account?\xA0',
 	                                    _react2.default.createElement(
 	                                        'a',

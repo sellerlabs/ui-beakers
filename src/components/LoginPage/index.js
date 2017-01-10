@@ -24,6 +24,7 @@ const LoginPage = (props) => {
         footerRow: {
             alignItems: 'center',
             display: 'flex',
+            flexFlow: 'row wrap',
             justifyContent: 'space-around',
             marginTop: 10,
         },
@@ -35,6 +36,8 @@ const LoginPage = (props) => {
             fontSize: 16,
         },
         signIn: {
+            display: 'flex',
+            justifyContent: 'center',
             marginTop: 10
         },
         signLink: {
@@ -48,10 +51,10 @@ const LoginPage = (props) => {
     };
 
     return (
-        <Grid>
+        <Grid breakpoints={ [12] }>
             <Row>
                 <div style={ styles.container }>
-                    <Column offset="1/6" width="2/3">
+                    <Column>
                         <Card>
                             <img
                                 alt="Logo"
@@ -74,13 +77,13 @@ const LoginPage = (props) => {
 
                             { children }
 
-                            <Row style={ styles.signIn }>
-                                <Column offset="1/3" width="1/3">
+                            <Row>
+                                <div style={ styles.signIn }>
                                     <RaisedButton
                                         buttonStyle={ styles.button }
                                         href={ slappUrl }
                                         label="SIGN IN WITH SELLER LABS" />
-                                </Column>
+                                </div>
                             </Row>
 
                             <Row>
