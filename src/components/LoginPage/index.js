@@ -8,7 +8,7 @@ import menuLogoQuantify from './images/menu-logo-quantify.svg';
 import menuLogoScope from './images/menu-logo-scope.svg';
 
 const LoginPage = (props) => {
-    const { children, color, description, logo, slappUrl } = props;
+    const { children, color, description, logo, paragraph, slappUrl } = props;
     const styles = {
         button: {
             backgroundColor: '#50c533',
@@ -47,20 +47,20 @@ const LoginPage = (props) => {
                     <Column offset="1/6" width="2/3">
                         <Card>
                             <img
-                                alt="Promote Logo"
+                                alt="Logo"
                                 src={ logo }
                                 style={ styles.img } />
 
                             <Row>
                                 <span style={ styles.description }>
-                                    Brief Product Description Goes Here
+                                    { description }
                                 </span>
                             </Row>
 
                             <Row>
                                 <Column offset="1/12" width="5/6">
                                     <p style={ styles.para }>
-                                        { description }
+                                        { paragraph }
                                     </p>
                                 </Column>
                             </Row>
@@ -121,6 +121,7 @@ LoginPage.propTypes = {
     color: PropTypes.string,
     description: PropTypes.string,
     logo: PropTypes.string,
+    paragraph: PropTypes.string,
     slappUrl: PropTypes.string.isRequired,
 };
 

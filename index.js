@@ -1075,6 +1075,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var color = props.color;
 	    var description = props.description;
 	    var logo = props.logo;
+	    var paragraph = props.paragraph;
 	    var slappUrl = props.slappUrl;
 	
 	    var styles = {
@@ -1124,7 +1125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        _materialUi.Card,
 	                        null,
 	                        _react2.default.createElement('img', {
-	                            alt: 'Promote Logo',
+	                            alt: 'Logo',
 	                            src: logo,
 	                            style: styles.img }),
 	                        _react2.default.createElement(
@@ -1133,7 +1134,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                            _react2.default.createElement(
 	                                'span',
 	                                { style: styles.description },
-	                                'Brief Product Description Goes Here'
+	                                description
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -1145,7 +1146,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                _react2.default.createElement(
 	                                    'p',
 	                                    { style: styles.para },
-	                                    description
+	                                    paragraph
 	                                )
 	                            )
 	                        ),
@@ -1229,6 +1230,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    color: _react.PropTypes.string,
 	    description: _react.PropTypes.string,
 	    logo: _react.PropTypes.string,
+	    paragraph: _react.PropTypes.string,
 	    slappUrl: _react.PropTypes.string.isRequired
 	};
 	
