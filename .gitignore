@@ -38,3 +38,7 @@ lib
 
 # CSV generated from language files by scripts/lang2csv
 lang.csv
+
+# Other
+*.DS_Store
+.DS_Store
