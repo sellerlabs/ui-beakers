@@ -1070,6 +1070,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var styles = {
+	    button: {
+	        backgroundColor: '#50c533'
+	    },
+	    container: {
+	        paddingTop: 78,
+	        textAlign: 'center'
+	    },
+	    description: {
+	        fontSize: 20
+	    },
+	    footerRow: {
+	        alignItems: 'center',
+	        display: 'flex',
+	        flexFlow: 'row wrap',
+	        justifyContent: 'space-around',
+	        marginTop: 10
+	    },
+	    img: {
+	        height: 90,
+	        marginTop: 35
+	    },
+	    para: {
+	        fontSize: 16
+	    },
+	    signIn: {
+	        display: 'flex',
+	        justifyContent: 'center',
+	        marginTop: 10
+	    },
+	    signLink: {
+	        color: '#007cd2',
+	        textDecoration: 'none'
+	    },
+	    signUp: {
+	        color: '#8d8d8d',
+	        marginBottom: 30
+	    }
+	};
+	
 	var LoginPage = function LoginPage(props) {
 	    var children = props.children;
 	    var color = props.color;
@@ -1078,46 +1118,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var paragraph = props.paragraph;
 	    var slappUrl = props.slappUrl;
 	
-	    var styles = {
-	        button: {
-	            backgroundColor: '#50c533'
-	        },
-	        container: {
-	            paddingTop: 78,
-	            textAlign: 'center'
-	        },
-	        description: {
-	            color: color,
-	            fontSize: 20
-	        },
-	        footerRow: {
-	            alignItems: 'center',
-	            display: 'flex',
-	            flexFlow: 'row wrap',
-	            justifyContent: 'space-around',
-	            marginTop: 10
-	        },
-	        img: {
-	            height: 90,
-	            marginTop: 35
-	        },
-	        para: {
-	            fontSize: 16
-	        },
-	        signIn: {
-	            display: 'flex',
-	            justifyContent: 'center',
-	            marginTop: 10
-	        },
-	        signLink: {
-	            color: '#007cd2',
-	            textDecoration: 'none'
-	        },
-	        signUp: {
-	            color: '#8d8d8d',
-	            marginBottom: 30
-	        }
-	    };
 	
 	    return _react2.default.createElement(
 	        _reactCellblock.Grid,
@@ -1143,7 +1143,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                            null,
 	                            _react2.default.createElement(
 	                                'span',
-	                                { style: styles.description },
+	                                {
+	                                    style: Object.assign({}, styles.description, { color: color }) },
 	                                description
 	                            )
 	                        ),

@@ -7,48 +7,48 @@ import menuLogoPromote from './images/menu-logo-promote.svg';
 import menuLogoQuantify from './images/menu-logo-quantify.svg';
 import menuLogoScope from './images/menu-logo-scope.svg';
 
+const styles = {
+    button: {
+        backgroundColor: '#50c533',
+    },
+    container: {
+        paddingTop: 78,
+        textAlign: 'center',
+    },
+    description: {
+        fontSize: 20,
+    },
+    footerRow: {
+        alignItems: 'center',
+        display: 'flex',
+        flexFlow: 'row wrap',
+        justifyContent: 'space-around',
+        marginTop: 10,
+    },
+    img: {
+        height: 90,
+        marginTop: 35,
+    },
+    para: {
+        fontSize: 16,
+    },
+    signIn: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: 10
+    },
+    signLink: {
+        color: '#007cd2',
+        textDecoration: 'none',
+    },
+    signUp: {
+        color: '#8d8d8d',
+        marginBottom: 30
+    },
+};
+
 const LoginPage = (props) => {
     const { children, color, description, logo, paragraph, slappUrl } = props;
-    const styles = {
-        button: {
-            backgroundColor: '#50c533',
-        },
-        container: {
-            paddingTop: 78,
-            textAlign: 'center',
-        },
-        description: {
-            color,
-            fontSize: 20,
-        },
-        footerRow: {
-            alignItems: 'center',
-            display: 'flex',
-            flexFlow: 'row wrap',
-            justifyContent: 'space-around',
-            marginTop: 10,
-        },
-        img: {
-            height: 90,
-            marginTop: 35,
-        },
-        para: {
-            fontSize: 16,
-        },
-        signIn: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: 10
-        },
-        signLink: {
-            color: '#007cd2',
-            textDecoration: 'none',
-        },
-        signUp: {
-            color: '#8d8d8d',
-            marginBottom: 30
-        },
-    };
 
     return (
         <Grid breakpoints={ [12] }>
@@ -62,7 +62,10 @@ const LoginPage = (props) => {
                                 style={ styles.img } />
 
                             <Row>
-                                <span style={ styles.description }>
+                                <span
+                                    style={ Object.assign(
+                                        {}, styles.description, { color }
+                                    ) }>
                                     { description }
                                 </span>
                             </Row>
