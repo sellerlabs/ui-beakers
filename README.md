@@ -150,3 +150,6 @@ logoStyle: PropTypes.object,
 particleColor: PropTypes.string,
 ringColor: PropTypes.string,
 ```
+
+### LoginPage
+Check the wiki :)
