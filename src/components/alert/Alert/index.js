@@ -6,9 +6,7 @@ const handleClick = (alert) => () => {
     removeAlert(alert);
 };
 
-const Alert = (props) => {
-    const { alert } = props;
-
+const Alert = ({ alert, style = {}, containerStyle = {}, alertStyle = {}}) => {
     if (alert) {
         const { message, type } = alert;
         const alertTypes = {
@@ -16,26 +14,43 @@ const Alert = (props) => {
             success: '#07CE8F',
             warning: '#FD7400',
         };
-        const style = {
-            container: {
-                backgroundColor: alertTypes[type],
-                color: '#fff',
-                padding: 20,
-                position: 'fixed',
-                textAlign: 'center',
-                top: 0,
-                width: '100%',
-                zIndex: 1031,
+        const x = Object.assign(
+            {},
+            {
+                x: {
+                    cursor: 'pointer',
+                    fontSize: 30,
+                    padding: '0 10px',
+                    position: 'absolute',
+                    right: 10,
+                    top: 10,
+                },
             },
-            x: {
-                cursor: 'pointer',
-                fontSize: 30,
-                padding: '0 10px',
-                position: 'absolute',
-                right: 10,
-                top: 10,
+            alertStyle
+        );
+
+        const container = Object.assign(
+            {},
+            {
+                container: {
+                    backgroundColor: alertTypes[type],
+                    color: '#fff',
+                    padding: 20,
+                    position: 'fixed',
+                    textAlign: 'center',
+                    top: 0,
+                    width: '100%',
+                    zIndex: 1031,
+                },
             },
-        };
+            containerStyle
+        );
+
+        const style = Object.assign(
+            {},
+            {container, x},
+            style
+        );
 
         return (
             <div style={ style.container }>
@@ -57,6 +72,9 @@ Alert.propTypes = {
     alert: PropTypes.shape({
         message: PropTypes.node.isRequired,
         type: PropTypes.oneOf(['danger', 'success', 'warning']),
+        style: PropTypes.object,
+        containerStyle: PropTypes.object,
+        alertStyle: PropTypes.object,
     }),
 };
 
