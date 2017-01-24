@@ -6,7 +6,7 @@ const handleClick = (alert) => () => {
     removeAlert(alert);
 };
 
-const Alert = ({ alert, style = {}, containerStyle = {}, alertStyle = {}}) => {
+const Alert = ({ alert, style = {}, containerStyle = {}, cancelStyle = {}}) => {
     if (alert) {
         const { message, type } = alert;
         const alertTypes = {
@@ -26,7 +26,7 @@ const Alert = ({ alert, style = {}, containerStyle = {}, alertStyle = {}}) => {
                     top: 10,
                 },
             },
-            alertStyle
+            cancelStyle
         );
 
         const container = Object.assign(
@@ -74,7 +74,7 @@ Alert.propTypes = {
         type: PropTypes.oneOf(['danger', 'success', 'warning']),
         style: PropTypes.object,
         containerStyle: PropTypes.object,
-        alertStyle: PropTypes.object,
+        cancelStyle: PropTypes.object,
     }),
 };
 
