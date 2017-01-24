@@ -6,7 +6,7 @@ const handleClick = (alert) => () => {
     removeAlert(alert);
 };
 
-const Alert = ({ alert, style = {}, containerStyle = {}, cancelStyle = {}}) => {
+const Alert = ({ alert, style = {}, containerStyle = {}, cancelStyle = {} }) => {
     if (alert) {
         const { message, type } = alert;
         const alertTypes = {
@@ -46,19 +46,19 @@ const Alert = ({ alert, style = {}, containerStyle = {}, cancelStyle = {}}) => {
             containerStyle
         );
 
-        const style = Object.assign(
+        const componentStyle = Object.assign(
             {},
-            {container, x},
+            { container, x },
             style
         );
 
         return (
-            <div style={ style.container }>
+            <div style={ componentStyle.container }>
                 { message }
 
                 <span
                     onClick={ handleClick(alert) }
-                    style={ style.x }>
+                    style={ componentStyle.x }>
                     &times;
                 </span>
             </div>
@@ -70,12 +70,15 @@ const Alert = ({ alert, style = {}, containerStyle = {}, cancelStyle = {}}) => {
 
 Alert.propTypes = {
     alert: PropTypes.shape({
-        message: PropTypes.node.isRequired,
-        type: PropTypes.oneOf(['danger', 'success', 'warning']),
-        style: PropTypes.object,
-        containerStyle: PropTypes.object,
         cancelStyle: PropTypes.object,
+        containerStyle: PropTypes.object,
+        message: PropTypes.node.isRequired,
+        style: PropTypes.object,
+        type: PropTypes.oneOf(['danger', 'success', 'warning']),
     }),
+    cancelStyle: PropTypes.object,
+    containerStyle: PropTypes.object,
+    style: PropTypes.object,
 };
 
 export default Alert;
