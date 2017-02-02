@@ -188,9 +188,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	};
 	
-	var Alert = function Alert(props) {
-	    var alert = props.alert;
-	
+	var Alert = function Alert(_ref) {
+	    var alert = _ref.alert;
+	    var _ref$style = _ref.style;
+	    var style = _ref$style === undefined ? {} : _ref$style;
+	    var _ref$containerStyle = _ref.containerStyle;
+	    var containerStyle = _ref$containerStyle === undefined ? {} : _ref$containerStyle;
+	    var _ref$cancelStyle = _ref.cancelStyle;
+	    var cancelStyle = _ref$cancelStyle === undefined ? {} : _ref$cancelStyle;
 	
 	    if (alert) {
 	        var message = alert.message;
@@ -201,7 +206,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	            success: '#07CE8F',
 	            warning: '#FD7400'
 	        };
-	        var style = {
+	        var x = Object.assign({}, {
+	            x: {
+	                cursor: 'pointer',
+	                fontSize: 30,
+	                padding: '0 10px',
+	                position: 'absolute',
+	                right: 10,
+	                top: 10
+	            }
+	        }, cancelStyle);
+	
+	        var container = Object.assign({}, {
 	            container: {
 	                backgroundColor: alertTypes[type],
 	                color: '#fff',
@@ -211,26 +227,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	                top: 0,
 	                width: '100%',
 	                zIndex: 1031
-	            },
-	            x: {
-	                cursor: 'pointer',
-	                fontSize: 30,
-	                padding: '0 10px',
-	                position: 'absolute',
-	                right: 10,
-	                top: 10
 	            }
-	        };
+	        }, containerStyle);
+	
+	        var componentStyle = Object.assign({}, { container: container, x: x }, style);
 	
 	        return _react2.default.createElement(
 	            'div',
-	            { style: style.container },
+	            { style: componentStyle.container },
 	            message,
 	            _react2.default.createElement(
 	                'span',
 	                {
 	                    onClick: handleClick(alert),
-	                    style: style.x },
+	                    style: componentStyle.x },
 	                '\xD7'
 	            )
 	        );
@@ -241,9 +251,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	Alert.propTypes = {
 	    alert: _react.PropTypes.shape({
+	        cancelStyle: _react.PropTypes.object,
+	        containerStyle: _react.PropTypes.object,
 	        message: _react.PropTypes.node.isRequired,
+	        style: _react.PropTypes.object,
 	        type: _react.PropTypes.oneOf(['danger', 'success', 'warning'])
-	    })
+	    }),
+	    cancelStyle: _react.PropTypes.object,
+	    containerStyle: _react.PropTypes.object,
+	    style: _react.PropTypes.object
 	};
 	
 	exports.default = Alert;
@@ -296,7 +312,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	
 	AlertContainer.propTypes = {
-	    alertComponent: _react.PropTypes.element.isRequired
+	    alertComponent: _react.PropTypes.func.isRequired
 	};
 	
 	exports.default = AlertContainer;

@@ -23,7 +23,7 @@ const AlertContainer = ({ alertComponent }) => {
 };
 
 AlertContainer.propTypes = {
-    alertComponent: PropTypes.element.isRequired,
+    alertComponent: PropTypes.func.isRequired,
 };
 
 export default AlertContainer;
