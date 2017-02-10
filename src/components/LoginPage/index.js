@@ -48,7 +48,15 @@ const styles = {
 };
 
 const LoginPage = (props) => {
-    const { children, color, description, logo, paragraph, slappUrl } = props;
+    const {
+        children,
+        color,
+        description,
+        logo,
+        paragraph,
+        signupSlappUrl,
+        slappUrl
+    } = props;
 
     return (
         <Grid breakpoints={ [12] }>
@@ -93,7 +101,7 @@ const LoginPage = (props) => {
                                 <Column>
                                     <p style={ styles.signUp }>
                                         Don&apos;t have a Seller Labs account?&nbsp;
-                                        <a href={ `${slappUrl}&prefer_signup=true` } style={ styles.signLink }>
+                                        <a href={ signupSlappUrl } style={ styles.signLink }>
                                             Sign up here
                                         </a>
                                     </p>
@@ -135,6 +143,7 @@ LoginPage.propTypes = {
     description: PropTypes.string,
     logo: PropTypes.string,
     paragraph: PropTypes.string,
+    signupSlappUrl: PropTypes.string.isRequired,
     slappUrl: PropTypes.string.isRequired,
 };
 
