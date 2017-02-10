@@ -101,7 +101,7 @@ const LoginPage = (props) => {
                                 <Column>
                                     <p style={ styles.signUp }>
                                         Don&apos;t have a Seller Labs account?&nbsp;
-                                        <a href={ `${signupSlappUrl}` } style={ styles.signLink }>
+                                        <a href={ signupSlappUrl } style={ styles.signLink }>
                                             Sign up here
                                         </a>
                                     </p>
