@@ -1132,6 +1132,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var description = props.description;
 	    var logo = props.logo;
 	    var paragraph = props.paragraph;
+	    var signupSlappUrl = props.signupSlappUrl;
 	    var slappUrl = props.slappUrl;
 	
 	
@@ -1202,7 +1203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    'Don\'t have a Seller Labs account?\xA0',
 	                                    _react2.default.createElement(
 	                                        'a',
-	                                        { href: slappUrl + '&prefer_signup=true', style: styles.signLink },
+	                                        { href: signupSlappUrl, style: styles.signLink },
 	                                        'Sign up here'
 	                                    )
 	                                )
@@ -1258,6 +1259,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    description: _react.PropTypes.string,
 	    logo: _react.PropTypes.string,
 	    paragraph: _react.PropTypes.string,
+	    signupSlappUrl: _react.PropTypes.string.isRequired,
 	    slappUrl: _react.PropTypes.string.isRequired
 	};
 	
